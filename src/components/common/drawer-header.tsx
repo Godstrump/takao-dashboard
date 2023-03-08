@@ -3,7 +3,6 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import styled from '@mui/system/styled';
 import Stack from '@mui/material/Stack';
-// import { Img } from '../../theme/styles'
 import Logo from '../../assets/img/logo.svg';
 import Typography from '@mui/material/Typography';
 import { Theme } from "@mui/material/styles";

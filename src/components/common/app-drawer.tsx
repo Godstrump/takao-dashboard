@@ -4,12 +4,7 @@ import styled from '@mui/system/styled';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import UsersIcon from '@mui/icons-material/Group';
-import CardsIcon from '@mui/icons-material/Style';
-import ReceiptIcon from '@mui/icons-material/Receipt';
 import CssBaseline from '@mui/material/CssBaseline';
-import PaidIcon from '@mui/icons-material/Paid';
-import AddCardIcon from '@mui/icons-material/AddCard';
 
 import AppBar from './drawer-bar'
 import DrawerHeader from './drawer-header';
@@ -18,10 +13,8 @@ import { DASHBOARD } from '../../utils/routes';
 import { entering, leaving, openedMixin, closedMixin } from '../../theme/transitions'
 import { DRAWER_WIDTH } from '../../utils/constants'
 import { Theme } from "@mui/material/styles";
-// import { selectDrawer } from '../../redux/users/user.selectors';
-// import { toggleDrawer as toggle } from '../../redux/users/user.reducer'
 
-type DrawerStyledProps = {
+export type DrawerStyledProps = {
   theme?: Theme;
   open?: boolean;
 }
