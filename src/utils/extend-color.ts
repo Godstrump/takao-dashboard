@@ -1,5 +1,5 @@
 import type { Theme } from "@mui/material/styles";
-import { ExtendColorProps } from "src/types/style-types";
+import { ExtendColorProps } from "../types/style-types";
 
 const extendColor = (theme: Theme, colur: ExtendColorProps) =>
     Array.isArray(colur)
