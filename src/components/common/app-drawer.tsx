@@ -41,9 +41,7 @@ const LINKS = [
 ];
 
 const AppDrawer = (props: PropsWithChildren) => {
-  // const open = useAppSelector(selectDrawer)
   const [open, setOpen] = useState(false)
-  // const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const match = useMatch("/")
 
@@ -56,7 +54,6 @@ const AppDrawer = (props: PropsWithChildren) => {
   }, [navigate, match])
 
   const toggleDrawer = () => {
-    // dispatch(toggle())
     setOpen(prev => !prev)
   };
 
