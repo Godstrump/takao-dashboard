@@ -23,7 +23,7 @@ import { Theme } from "@mui/material/styles";
 
 type DrawerStyledProps = {
   theme?: Theme;
-  open: boolean;
+  open?: boolean;
 }
 
 const LINKS = [
@@ -93,7 +93,7 @@ const DrawerWrapper = styled(Box)(({ theme }) => ({
 
 const Drawer = styled(MuiDrawer, 
   { shouldForwardProp: (prop: string) => prop !== 'open' })
-  (({ theme, open }) => ({
+  (({ theme, open }: DrawerStyledProps) => ({
     width: DRAWER_WIDTH,
     flexShrink: 0,
     whiteSpace: 'nowrap',
@@ -102,11 +102,11 @@ const Drawer = styled(MuiDrawer,
       backgroundColor: "#000",
 
     },
-    ...(open && {
+    ...(open && theme && {
       ...openedMixin(theme),
       '& .MuiDrawer-paper': openedMixin(theme),
     }),
-    ...(!open && {
+    ...(!open && theme && {
       ...closedMixin(theme),
       '& .MuiDrawer-paper': closedMixin(theme),
     }),
@@ -114,17 +114,17 @@ const Drawer = styled(MuiDrawer,
 );
 
 const DrawerContent = styled(Box, { shouldForwardProp: (prop: string) => prop !== 'open' })(
-  ({ theme, open }) => ({
+  ({ theme, open }: DrawerStyledProps) => ({
     marginTop: theme?.spacing(10),
     overflowX: 'hidden',
     backgroundColor: '#FFF',
     paddingRight: 62,
-    ...(open && {
+    ...(open && theme && {
       ...entering(theme, ['width', 'margin']),
       marginLeft: `calc(${DRAWER_WIDTH}px + ${theme?.spacing(4)})`,
       width: `calc(100% - ${DRAWER_WIDTH}px)`,
     }),
-    ...(!open && {
+    ...(!open && theme && {
       ...leaving(theme, ['width', 'margin']),
       marginLeft: theme?.spacing(10),
       width: `calc(100% - ${theme?.spacing(11)}) !important`,

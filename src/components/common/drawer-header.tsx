@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 // import { Img } from '../../theme/styles'
 import Logo from '../../assets/img/logo.svg';
 import Typography from '@mui/material/Typography';
+import { Theme } from "@mui/material/styles";
 
 type DrawerHeaderProps = {
   toggle: () => void,
@@ -31,15 +32,15 @@ const DrawerHeader = ({ toggle, open }: DrawerHeaderProps) => {
   )
 }
 
-const DrawerHeaderEl = styled('div')(({ theme }) => ({
+const DrawerHeaderEl = styled('div')(({ theme }: { theme?: Theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
-  padding: theme.spacing(0, 1),
+  padding: theme?.spacing(0, 1),
   width: '100%',
   color: '#FFF',
   // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
+  ...theme?.mixins.toolbar,
 }));
 
 export default DrawerHeader
